@@ -11,7 +11,7 @@ const s3 = new S3({
   accessKeyID: Deno.env.get("S3_ACCESS_KEY")!,
   secretKey: Deno.env.get("S3_SECRET_KEY")!,
   region: Deno.env.get("S3_REGION")!,
-  endpointURL: Deno.env.get("S3_ENDPOINT_URL"),
+  endpointURL: `https://${Deno.env.get("S3_ENDPOINT_HOST")}`,
 });
 
 const bucket = s3.getBucket(Deno.env.get("S3_BUCKET")!);
